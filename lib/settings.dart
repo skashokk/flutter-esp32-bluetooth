@@ -12,7 +12,7 @@ class ConfigNameController {
     _controller = BehaviorSubject.seeded(deviceName);
   }
 
-  Observable<String> get stream => _controller.stream;
+  Stream<String> get stream => _controller.stream;
   String get current => _controller.value;
 
   setDeviceName(String name) {
@@ -36,7 +36,8 @@ class _SettingsButtonState extends State<SettingsButton> {
         Row(
           children: <Widget>[
             Expanded(
-              child: Text("Settings", style: Theme.of(context).textTheme.title),
+              child: Text("Settings",
+                  style: Theme.of(context).textTheme.titleMedium),
             ),
             IconButton(
               padding: EdgeInsets.all(0),

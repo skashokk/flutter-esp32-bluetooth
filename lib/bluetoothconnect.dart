@@ -28,7 +28,7 @@ class BluetoothConnect extends StatelessWidget {
     snackbar.stream.listen(
       (snack) {
         if (snack != null) {
-          Scaffold.of(context).showSnackBar(snack);
+          ScaffoldMessenger.of(context).showSnackBar(snack);
         }
       },
     );
@@ -76,7 +76,7 @@ class SnackbarController {
     _controller = BehaviorSubject.seeded(null);
   }
 
-  Observable<Widget> get stream => _controller.stream;
+  Stream<Widget> get stream => _controller.stream;
   Widget get current => _controller.value;
 
   openSnackbar(Widget widget, String msg) {
@@ -116,7 +116,7 @@ class BluetoothConnector {
     initDevice();
   }
 
-  Observable<int> get stream => _controller.stream;
+  Stream<int> get stream => _controller.stream;
   int get current => _controller.value;
 
   startScan() async {

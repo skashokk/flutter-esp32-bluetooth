@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.blue,
-        accentColor: Colors.blueAccent,
+        secondaryHeaderColor: Colors.blueAccent,
       ),
       home: App(),
     );
@@ -112,7 +112,7 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                   onChangeEnd: changeSlider,
                 ),
                 SizedBox(height: 10),
-                RaisedButton(
+                ElevatedButton(
                   child: Text("TOGGLE"),
                   onPressed: () {
                     setState(() {
